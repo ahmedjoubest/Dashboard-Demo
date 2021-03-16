@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+
+    <meta charset="utf-8">
+    <title> Plateforme CAS </title>
+  </head>
+  <body>
+
+<style>
+
+</style>
+
+
+<div id="container"></div>
+
+
+
+<script>
+
+
+$(document).ready(function() {
+  
+Highcharts.setOptions({
+    lang: {
+    months: [
+            'Janvier', 'Février', 'Mars', 'Avril',
+            'Mai', 'Juin', 'Juillet', 'Août',
+            'Septembre', 'Octobre', 'Novembre', 'Décembre'
+        ],
+        weekdays: [
+            'Dimanche', 'Lundi', 'Mardi', 'Mercredi',
+            'Jeudi', 'Vendredi', 'Samedi'
+        ],
+        shortMonths: ['Jan','Fév','Mar','Avr','Mai','Jui','Jui',
+        'Aôu','Sep','Oct','Nov','Déc']
+    }
+});
+  var ranges = [
+            [Date.UTC(2019, 00, 1),215,235],
+            [Date.UTC(2019, 01, 1),220,240 ],
+            [Date.UTC(2019, 02, 1), 190,210],
+            [Date.UTC(2019, 03, 1), 160,180],
+            [Date.UTC(2019, 04, 1), 120,140],
+            [Date.UTC(2019, 05, 1), 123,143],
+            [Date.UTC(2019, 06, 1), 135,155],
+            [Date.UTC(2019, 07, 1), 115,135],
+            [Date.UTC(2019, 08, 1), 158,175],
+            [Date.UTC(2019, 9, 1), 153,173],
+            [Date.UTC(2019, 10, 1), 153,173],
+            [Date.UTC(2019, 11, 1), 177,197]
+    ],
+     theorique = [
+            [Date.UTC(2019, 0, 1), 225],
+            [Date.UTC(2019, 01, 1), 230],
+            [Date.UTC(2019, 02, 1), 200],
+            [Date.UTC(2019, 03, 1), 170],
+            [Date.UTC(2019, 04, 1), 130],
+            [Date.UTC(2019, 05, 1), 133],
+            [Date.UTC(2019, 06, 1), 145],
+            [Date.UTC(2019, 07, 1), 125],
+            [Date.UTC(2019, 08, 1), 168],
+            [Date.UTC(2019, 9, 1), 163],
+            [Date.UTC(2019, 10, 1), 163],
+            [Date.UTC(2019, 11, 1), 187]
+
+        ],
+         realise = [
+            [Date.UTC(2019, 0, 1), 240],
+            [Date.UTC(2019, 01, 1), 235],
+            [Date.UTC(2019, 02, 1), 182],
+            [Date.UTC(2019, 03, 1), 158],
+            [Date.UTC(2019, 04, 1), 115],
+            [Date.UTC(2019, 05, 1), 110],
+            [Date.UTC(2019, 06, 1), 115],
+            [Date.UTC(2019, 07, 1), 122],
+            [Date.UTC(2019, 08, 1), 149],
+            [Date.UTC(2019, 9, 1), 159],
+            [Date.UTC(2019, 10, 1), 138],
+            [Date.UTC(2019, 11, 1), 147]
+
+        ],
+        couleurs = [
+        '#FF6F6F',
+        '#FF6F6F',
+        '#FFCD33',
+        '#FFCD33',
+        '#44BD69',
+        '#44BD69',
+        '#44BD69',
+        '#FFCD33',
+        '#44BD69',
+        '#FFCD33',
+        '#44BD69',
+        '#44BD69',
+       
+    ]
+
+  
+  
+  var chart = Highcharts.chart('container', {
+		chart: {
+
+  height : 300,
+	reflow: true
+    },
+    title:{
+        text: ''
+    },
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+						month: '%b',
+            day: '%b'        },
+        title: {
+            text: ''
+        },
+        plotLines: [
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          
+{color: '#1D60A1',width: 1.45,value: 1546300800000,zIndex: 4},
+{color: '#1D60A1',width: 1.45,value: 1550361600000,zIndex: 4},
+{color: '#1D60A1',width: 1.45,value: 1557705600000,zIndex: 4},
+
+
+
+
+
+        ]
+            
+    },
+        annotations: [{draggable: '',
+        labels: [
+
+
+
+
+
+
+
+{point: {x : 1546300800000,y: 15,xAxis: 0,},shape: 'circle',style: {fontSize: '15px',fontWeight: 'bold',fontFamily : 'Lucida Sans'},align:'center',text: 'B' },
+{point: {x : 1550361600000,y: 15,xAxis: 0,},shape: 'circle',style: {fontSize: '15px',fontWeight: 'bold',fontFamily : 'Lucida Sans'},align:'center',text: 'C' },
+{point: {x : 1557705600000,y: 15,xAxis: 0,},shape: 'circle',style: {fontSize: '15px',fontWeight: 'bold',fontFamily : 'Lucida Sans'},align:'center',text: 'A' },
+
+
+
+
+
+
+],
+        labelOptions: {
+            backgroundColor: '#1D60A1',
+            borderColor: '#1D60A1'
+        }
+    }],
+
+    		plotOptions: {
+        series: {
+            marker: {states: {
+                hover: {
+                    enabled: false
+                }}
+            }
+        },
+        
+        spline: {
+			dashStyle:'ShortDash',
+        		color:'black',
+			shadow:true
+        },
+        
+        column: {
+            opacity: 1,
+        		pointWidth: 40,
+            colorByPoint: true,
+                colors: couleurs
+        },
+
+    },
+    
+  yAxis: [{
+        // Primary yAxis
+        labels: {
+
+        },
+        title: {
+            text: 'MWh',
+            style: {
+                color: "grey"
+
+            }
+        }
+    }, {title: {
+            text: '',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        }}
+    
+    ],
+
+    tooltip: {
+        shared: true
+    },
+    legend: {
+     enabled: false,
+      align: 'right',
+      verticalAlign: 'middle'
+    },
+
+    // Define the data points. All series have a dummy year
+    // of 1970/71 in order to be compared on the same x axis. Note
+    // that in JavaScript, months start at 0 for January, 1 for February etc.
+    series: [{
+        name: "Théorique",
+        type: 'column',
+        data: realise
+    }, {
+        name: "Réalisé",
+        type: 'spline',
+        data: theorique,
+	marker: {
+            enabled: false
+        }
+    
+    },{enableMouseTracking :false,
+        name: 'Range',
+        data: ranges,
+        type: 'areasplinerange',
+        lineWidth: 0,
+        linkedTo: ':previous',
+        color: '#C6ACD9',
+        fillOpacity: 0.65,
+        zIndex: 0,
+        marker: {
+            enabled: false
+        }
+        }],
+    
+    credits: {
+    enabled: false
+  }
+
+
+});
+
+
+ $('.sidebar-toggle').bind('click', function() {
+     var width_box = $('.box.box-solid.box-primary>.box-body').width();
+    var hauteur = 300;
+    var newWidth = width_box;
+    chart.setSize(newWidth, hauteur, true);
+    chart.setSize(newWidth, hauteur, true);
+        });
+
+
+  var resizeFlag = false;
+  $('.sidebar-toggle').on('click', function() {
+    var width_box = $('.box.box-solid.box-primary>.box-body').width();
+    chart.setSize(width_box, 300);
+    resizeFlag = !resizeFlag;
+  });
+
+  $(window).resize(function() {
+    if (resizeFlag) {
+      chart.setSize(null, null);
+      resizeFlag = !resizeFlag;
+    }
+  });
+});
+
+
+
+</script>
+
+
+  </body>
+</html>
